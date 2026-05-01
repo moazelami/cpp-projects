@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "cmath": "cpp",
+        "xstring": "cpp",
+        "string": "cpp",
+        "xlocale": "cpp",
+        "algorithm": "cpp",
+        "vector": "cpp"
+    },
+    "dart.showTodos": false,
+    "C_Cpp.errorSquiggles": "enabled"
+}

@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build LibrarySystem",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "main.cpp",
+                "src/BookClass.cpp",
+                "src/BorrowerClass.cpp",
+                "src/LibraryClass.cpp",
+                "-I",
+                "include",
+                "-o",
+                "program"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
