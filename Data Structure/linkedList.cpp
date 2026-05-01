@@ -26,7 +26,7 @@ public:
     {
         Node *newNode = new Node;
         newNode->data = newValue;
-        if(isEmpty())
+        if (isEmpty())
         {
             newNode->next = NULL;
             head = newNode;
@@ -37,11 +37,11 @@ public:
             head = newNode;
         }
     }
-    
+
     void display()
     {
         Node *temp = head;
-        while(temp != NULL)
+        while (temp != NULL)
         {
             cout << temp->data << " ";
             temp = temp->next;
@@ -66,7 +66,7 @@ public:
         Node *temp = head;
         while (temp != NULL)
         {
-            if(temp -> data ==key)
+            if (temp->data == key)
                 found = true;
 
             temp = temp->next;
@@ -74,6 +74,50 @@ public:
         return found;
     }
 
+    void insertbefore(int item , int newValue)
+    {
+        if(isEmpty())
+        {
+            insertFirst(newValue);
+        }
+        else
+        {
+            if(isFound(item))
+            {
+            Node *newNode = new Node();
+            newNode->data = newValue;
+            Node *temp = head;
+                while(temp != NULL && temp->next->data != item)
+                {
+                    temp = newNode->next;
+                }
+            newNode->next = temp->next;
+            temp->next = newNode;
+            }
+            else
+            {
+            cout << "Sorry , Item Not Found" << endl;
+            }
+        }
+    }
+
+    void append(int newValue)
+    {
+        if(isEmpty())
+            insertFirst(newValue);
+        else
+        {
+            Node *temp = head;
+            while(temp->next != NULL)
+            {
+                temp = temp->next;
+            }
+            Node *newNode = new Node();
+            newNode->data = newValue;
+            temp->next - newNode;
+            newNode->next = NULL;
+        }
+    }
 
 };
 
@@ -115,7 +159,14 @@ int main()
     else
         cout << "item not Founded" << endl;
 
-
-
+    cout << "\n==========================\n";
+    int newValue;
+    cout << "Enter Item and new value to insert" << endl;
+    cin >> item >> newValue;
+    lst.insertbefore(item , newValue);
+    lst.display();
+    cout << "\n==========================\n";
+    lst.append(newValue);
+    lst.display();
     return 0;
 }
